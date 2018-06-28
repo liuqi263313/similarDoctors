@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta content="text/html; charset=utf-8">
+    <title>Untitled Document</title>
+    <script type="text/javascript">
+    function doctorType(id) {
+        for (var i = 0; i < 5; i++) {
+            var x = document.getElementById('content' + (i + 1));
+            x.style.display = 'none';
+        }
+        var div = document.getElementById('content' + id);
+        div.style.display = 'block';
+    }
+    </script>
+    <style>
+    * {
+        font-family: Helvetica, sans-serif;
+    }
+
+    #header {
+        text-shadow: 1px 1px 2px #000;
+        position: relative;
+        left: 210px;
+        top: 10px;
+        margin-bottom: 30px;
+    }
+
+    #doc {
+        background-color: lightblue;
+        text-align: center;
+    }
+
+    #main {
+        background-color: #eee;
+        margin: 5px;
+        padding-left: 15px;
+    }
+    
+    table {
+    	border-collapse: collapse;
+    }
+
+    table, th, td {
+    	border: 1px solid black;
+    }
+    </style>
+</head>
+
+<body>
+<!--Assume there are only 5 doctors, and the entire directory of doctors fits into memory.-->
+    <h2 id="header">Listing of Doctors</h2> 
+    <table width="632" border="1">
+        <tr>
+            <td id="doc" width="70"><a href="javascript:doctorType(1)">Doctor1 </a></td>
+            <td id="main" width="550" colspan="4" rowspan="5">
+                <div id="content1" style="display:block">
+				<!--I simply listed the assumed specialties for each doctor. More details can be added.-->
+                    <h3>Doctor1's specialty: (Better ability is fronted) </h3>
+                    <ul>
+                        <li>Cardiology</li>
+                        <li>Surgery</li>
+                    </ul>
+                    <h4>Similar Doctors:</h4>
+                    <ul>
+                        <li>Doctor4 (Cardiology) </li>
+                        <li>Doctor3 (Surgery) </li>
+                    </ul>
+                </div>
+                <div id="content2" style="display:none">
+                    <h3>Doctor2's specialty: (Better ability is fronted) </h3>
+                    <ul>
+                        <li>Immunology</li>
+                        <li>Anesthesia</li>
+                        <li>Otolaryngology</li>
+                    </ul>
+                    <h4>Similar Doctors:</h4>
+                    <ul>
+                        <li>Doctor5 (Anesthesia) </li>
+                        <li>Doctor4 (Otolaryngology) </li>
+                        <li>Doctor3 (Immunology)</li>
+                    </ul>
+                </div>
+                <div id="content3" style="display:none">
+                    <h3>Doctor3's specialty: (Better ability is fronted) </h3>
+                    <ul>
+                        <li>Orthopedics</li>
+                        <li>Surgery</li>
+                        <li>Immunology</li>
+                    </ul>
+                    <h4>Similar Doctors:</h4>
+                    <ul>
+                        <li>Doctor1 (Surgery) </li>
+                        <li>Doctor2 (Immunology) </li>
+                        <li>Doctor5 (Orthopedics)</li>
+                    </ul>
+                </div>
+                <div id="content4" style="display:none">
+                    <h3>Doctor4's specialty: (Better ability is fronted) </h3>
+                    <ul>
+                        <li>Otolaryngology</li>
+                        <li>Cardiology</li>
+                        <li>Gynecology</li>
+                    </ul>
+                    <h4>Similar Doctors:</h4>
+                    <ul>
+                        <li>Doctor1 (Cardiology) </li>
+                        <li>Doctor2 (Otolaryngology) </li>
+                    </ul>
+                </div>
+                <div id="content5" style="display:none">
+                    <h3>Doctor5's specialty: (Better ability is fronted) </h3>
+                    <ul>
+                        <li>Anesthesia</li>
+                        <li>Respiratory</li>
+                        <li>Orthopedics</li>
+                    </ul>
+                    <h4>Similar Doctors:</h4>
+                    <ul>
+                        <li>Doctor3 (Orthopedics) </li>
+                        <li>Doctor2 (Anesthesia) </li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td id="doc"><a href="javascript:doctorType(2)">Doctor2 </a></td>
+        </tr>
+        <tr>
+            <td id="doc"><a href="javascript:doctorType(3)">Doctor3 </a></td>
+        </tr>
+        <tr>
+            <td id="doc"><a href="javascript:doctorType(4)">Doctor4 </a></td>
+        </tr>
+        <tr>
+            <td id="doc"><a href="javascript:doctorType(5)">Doctor5 </a></td>
+        </tr>
+    </table>
+</body>
+<!--If I have more time, I would like to put this whole thing out of the table,
+    which is my comfort zone, but table is somewhat not very easy for debugging. 
+    Also, I would like to use some frameworks such as jQuery to beautify the webpage, 
+	making it more user friendly on font families, margins/paddings, and some other 
+	aspects that can make it look better. Furthermore, I assume there are only five 
+	doctors, which may not be very reliable in real life. For instance, if there are 
+	about 100+ doctors, listing all of them in one html file sounds not very good
+	in this way. I would like to put them in the database/cache/local storage, 
+	and work on the interaction if using MVC architecture. -->
+</html>
